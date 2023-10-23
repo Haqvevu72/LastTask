@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            product_list = new ListBox();
             search_bar = new TextBox();
             search_btn = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            clear_btn = new Button();
+            remove_btn = new Button();
             edit_btn = new Button();
             add_btn = new Button();
+            product_list = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)product_list).BeginInit();
             SuspendLayout();
-            // 
-            // product_list
-            // 
-            product_list.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            product_list.FormattingEnabled = true;
-            product_list.ItemHeight = 21;
-            product_list.Location = new Point(12, 53);
-            product_list.Name = "product_list";
-            product_list.Size = new Size(432, 256);
-            product_list.TabIndex = 0;
             // 
             // search_bar
             // 
@@ -66,30 +57,33 @@
             search_btn.TabIndex = 2;
             search_btn.Text = "Search";
             search_btn.UseVisualStyleBackColor = false;
+            search_btn.Click += search_btn_Click;
             // 
-            // button2
+            // clear_btn
             // 
-            button2.BackColor = Color.DarkSlateBlue;
-            button2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(12, 431);
-            button2.Name = "button2";
-            button2.Size = new Size(432, 28);
-            button2.TabIndex = 3;
-            button2.Text = "Clear List";
-            button2.UseVisualStyleBackColor = false;
+            clear_btn.BackColor = Color.DarkSlateBlue;
+            clear_btn.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            clear_btn.ForeColor = Color.White;
+            clear_btn.Location = new Point(12, 431);
+            clear_btn.Name = "clear_btn";
+            clear_btn.Size = new Size(432, 28);
+            clear_btn.TabIndex = 3;
+            clear_btn.Text = "Clear List";
+            clear_btn.UseVisualStyleBackColor = false;
+            clear_btn.Click += clear_btn_Click;
             // 
-            // button3
+            // remove_btn
             // 
-            button3.BackColor = Color.DarkSlateBlue;
-            button3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(12, 397);
-            button3.Name = "button3";
-            button3.Size = new Size(432, 28);
-            button3.TabIndex = 4;
-            button3.Text = "Remove Product";
-            button3.UseVisualStyleBackColor = false;
+            remove_btn.BackColor = Color.DarkSlateBlue;
+            remove_btn.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            remove_btn.ForeColor = Color.White;
+            remove_btn.Location = new Point(12, 397);
+            remove_btn.Name = "remove_btn";
+            remove_btn.Size = new Size(432, 28);
+            remove_btn.TabIndex = 4;
+            remove_btn.Text = "Remove Product";
+            remove_btn.UseVisualStyleBackColor = false;
+            remove_btn.Click += remove_btn_Click;
             // 
             // edit_btn
             // 
@@ -102,6 +96,7 @@
             edit_btn.TabIndex = 5;
             edit_btn.Text = "Edit Product";
             edit_btn.UseVisualStyleBackColor = false;
+            edit_btn.Click += edit_btn_Click;
             // 
             // add_btn
             // 
@@ -114,34 +109,44 @@
             add_btn.TabIndex = 6;
             add_btn.Text = "Add Product";
             add_btn.UseVisualStyleBackColor = false;
+            add_btn.Click += add_btn_Click;
             // 
-            // Form1
+            // product_list
+            // 
+            product_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            product_list.Location = new Point(14, 61);
+            product_list.Name = "product_list";
+            product_list.RowTemplate.Height = 25;
+            product_list.Size = new Size(430, 263);
+            product_list.TabIndex = 7;
+            // 
+            // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(459, 471);
+            Controls.Add(product_list);
             Controls.Add(add_btn);
             Controls.Add(edit_btn);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(remove_btn);
+            Controls.Add(clear_btn);
             Controls.Add(search_btn);
             Controls.Add(search_bar);
-            Controls.Add(product_list);
-            Name = "Form1";
+            Name = "MainScreen";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)product_list).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private ListBox product_list;
         private TextBox search_bar;
         private Button search_btn;
-        private Button button2;
-        private Button button3;
+        private Button clear_btn;
+        private Button remove_btn;
         private Button edit_btn;
         private Button add_btn;
+        private DataGridView product_list;
     }
 }

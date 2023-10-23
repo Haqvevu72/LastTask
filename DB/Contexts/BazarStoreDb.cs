@@ -9,7 +9,7 @@ namespace DB.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Connection String");
+            optionsBuilder.UseSqlServer("Data Source=STHQ0125-10;Database=BazarDB;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
             base.OnConfiguring(optionsBuilder);
         }
